@@ -1,0 +1,98 @@
+Write a function that takes in an array and returns an array of the three largest numbers
+
+function findThreeLargestNumbers(array){
+  let arr = []
+  for(let i = 0; i < array.length; i++){
+    let curr = array[i]
+    findLargestHelper(curr,arr)
+  }
+  return arr
+}
+
+function findLargestHelper(num,largestThree){
+  let first = largestThree[0]
+  let sec = largestThree[1]
+  let third = largestThree[2]
+  
+  if(third === null || num > third){
+    largestThree[2] = num
+    largestThree[1] = third
+    largestThree[0] = sec
+  }else if (sec === null || num > sec){
+    largestThree[1] = num
+    largestThree[0] = sec
+  }else if(first === null || num > first){
+    largestThree[0] = num
+  }
+}
+
+Main function
+let largestThree = []
+for(let i = 0; i < array.length; i++){
+  let curr = array[i]
+  findLargestHelper(curr, largestThree)
+}
+
+return largestThree
+
+
+
+
+
+function findThreeLargestNumbers(array){
+  let arr = [null,null,null]
+  for(let i = 0; i < array.length; i++){
+    let curr = array[i]
+    findThreeLargestNumberHelper(curr,arr)
+  }
+  return arr
+}
+
+function findThreeLargestNumberHelper(num,arr){
+  let third = arr[2]
+  let sec = arr[1]
+  let first = arr[0]
+  
+  if(third === null || num > third){
+    arr[2] = num
+    arr[1] = third
+    arr[0] = sec
+  }else if (sec === null || num > sec){
+    
+    arr[1] = num
+    arr[0] = sec
+  }else if(first === null || num > first){
+    arr[0] = num
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
